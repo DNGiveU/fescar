@@ -20,19 +20,60 @@ import com.alibaba.fescar.core.rpc.RpcContext;
 
 public interface TCInboundHandler {
 
+    /**
+     * 全局事物的创建
+     * @param globalBegin
+     * @param rpcContext
+     * @return
+     */
     GlobalBeginResponse handle(GlobalBeginRequest globalBegin, RpcContext rpcContext);
 
+    /**
+     * 全局事物的提交
+     * @param globalCommit
+     * @param rpcContext
+     * @return
+     */
     GlobalCommitResponse handle(GlobalCommitRequest globalCommit, RpcContext rpcContext);
 
+    /**
+     * 全局事物的回滚
+     *
+     * @param globalRollback
+     * @param rpcContext
+     * @return
+     */
     GlobalRollbackResponse handle(GlobalRollbackRequest globalRollback, RpcContext rpcContext);
 
+    /**
+     * 分支的注册
+     * @param branchRegister
+     * @param rpcContext
+     * @return
+     */
     BranchRegisterResponse handle(BranchRegisterRequest branchRegister, RpcContext rpcContext);
 
+    /**
+     * 分支的状态上报
+     * @param branchReport
+     * @param rpcContext
+     * @return
+     */
     BranchReportResponse handle(BranchReportRequest branchReport, RpcContext rpcContext);
 
+    /**
+     * TODO
+     * @param checkLock
+     * @param rpcContext
+     * @return
+     */
     GlobalLockQueryResponse handle(GlobalLockQueryRequest checkLock, RpcContext rpcContext);
 
+    /**
+     * 全局事物的状态
+     * @param globalStatus
+     * @param rpcContext
+     * @return
+     */
     GlobalStatusResponse handle(GlobalStatusRequest globalStatus, RpcContext rpcContext);
-
-
 }

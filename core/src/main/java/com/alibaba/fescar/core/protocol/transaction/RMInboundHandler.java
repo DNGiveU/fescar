@@ -18,7 +18,19 @@ package com.alibaba.fescar.core.protocol.transaction;
 
 public interface RMInboundHandler {
 
+    /**
+     * 分支事物的提交
+     *
+     * @param request
+     * @return
+     */
     BranchCommitResponse handle(BranchCommitRequest request);
 
+    /**
+     * 分支事物的回滚
+     *
+     * @param request
+     * @return
+     */
     BranchRollbackResponse handle(BranchRollbackRequest request);
 }

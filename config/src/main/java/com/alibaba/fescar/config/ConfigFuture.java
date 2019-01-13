@@ -16,14 +16,19 @@
 
 package com.alibaba.fescar.config;
 
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+
 /**
  * The type Config future.
+ *
+ * 为了支持超时配置
+ *
+ * 1. 任务队列排队可能超时
+ * 2. 执行任务的时候可能超时（因为使用了第三方存储配置）
  *
  * @Author: jimin.jm @alibaba-inc.com
  * @Project: fescar-all

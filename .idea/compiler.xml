@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="fescar-common" />
+        <module name="fescar-config" />
+        <module name="fescar-core" />
+        <module name="fescar-dubbo" />
+        <module name="fescar-examples" />
+        <module name="fescar-rm-datasource" />
+        <module name="fescar-server" />
+        <module name="fescar-spring" />
+        <module name="fescar-test" />
+        <module name="fescar-tm" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="fescar-all" target="1.7" />
+      <module name="fescar-common" target="1.7" />
+      <module name="fescar-config" target="1.7" />
+      <module name="fescar-core" target="1.7" />
+      <module name="fescar-distribution" target="1.7" />
+      <module name="fescar-dubbo" target="1.7" />
+      <module name="fescar-examples" target="1.7" />
+      <module name="fescar-rm-datasource" target="1.7" />
+      <module name="fescar-server" target="1.7" />
+      <module name="fescar-spring" target="1.7" />
+      <module name="fescar-test" target="6" />
+      <module name="fescar-tm" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

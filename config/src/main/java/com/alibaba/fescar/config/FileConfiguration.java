@@ -16,18 +16,17 @@
 
 package com.alibaba.fescar.config;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-
 import com.alibaba.fescar.common.thread.NamedThreadFactory;
 import com.alibaba.fescar.config.ConfigFuture.ConfigOperation;
-
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * The type FileConfiguration.
@@ -196,6 +195,7 @@ public class FileConfiguration implements Configuration {
         @Override
         public void run() {
             if (null != configFuture) {
+                // 判断任务是否超时，因为可能有很多个任务判断
                 if (configFuture.isTimeout()) {
                     setFailResult(configFuture);
                 }

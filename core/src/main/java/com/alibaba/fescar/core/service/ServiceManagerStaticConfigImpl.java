@@ -68,6 +68,5 @@ public class ServiceManagerStaticConfigImpl implements ServiceManager {
             throw new FrameworkException(InvalidConfiguration);
         }
         return serverAddresses;
-
     }
 }

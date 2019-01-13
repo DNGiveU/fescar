@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/fescar-all.iml" filepath="$PROJECT_DIR$/fescar-all.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/fescar-common.iml" filepath="$PROJECT_DIR$/common/fescar-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config/fescar-config.iml" filepath="$PROJECT_DIR$/config/fescar-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/fescar-core.iml" filepath="$PROJECT_DIR$/core/fescar-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/distribution/fescar-distribution.iml" filepath="$PROJECT_DIR$/distribution/fescar-distribution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo/fescar-dubbo.iml" filepath="$PROJECT_DIR$/dubbo/fescar-dubbo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/examples/fescar-examples.iml" filepath="$PROJECT_DIR$/examples/fescar-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rm-datasource/fescar-rm-datasource.iml" filepath="$PROJECT_DIR$/rm-datasource/fescar-rm-datasource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server/fescar-server.iml" filepath="$PROJECT_DIR$/server/fescar-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring/fescar-spring.iml" filepath="$PROJECT_DIR$/spring/fescar-spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/fescar-test.iml" filepath="$PROJECT_DIR$/test/fescar-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tm/fescar-tm.iml" filepath="$PROJECT_DIR$/tm/fescar-tm.iml" />
+    </modules>
+  </component>
+</project>
