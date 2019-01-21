@@ -16,18 +16,6 @@
 
 package com.alibaba.fescar.rm.datasource;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-
 import com.alibaba.fescar.common.exception.NotSupportYetException;
 import com.alibaba.fescar.common.thread.NamedThreadFactory;
 import com.alibaba.fescar.config.ConfigurationFactory;
@@ -35,9 +23,15 @@ import com.alibaba.fescar.core.exception.TransactionException;
 import com.alibaba.fescar.core.model.BranchStatus;
 import com.alibaba.fescar.core.model.ResourceManagerInbound;
 import com.alibaba.fescar.rm.datasource.undo.UndoLogManager;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.*;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 import static com.alibaba.fescar.core.service.ConfigurationKeys.CLIENT_ASYNC_COMMIT_BUFFER_LIMIT;
 
@@ -97,6 +91,11 @@ public class AsyncWorker implements ResourceManagerInbound {
         }, 10, 1000 * 1, TimeUnit.MILLISECONDS);
     }
 
+    /**
+     * 提交到com.alibaba.fescar.rm.datasource.AsyncWorker#branchCommit(java.lang.String, long, java.lang.String, java.lang.String)
+     * 表示二阶段提交已完成，则可以直接返回BranchStatus.PhaseTwo_Committed
+     * 删除回滚（undo）日志
+     */
     private void doBranchCommits() {
         if (ASYNC_COMMIT_BUFFER.size() == 0) {
             return;

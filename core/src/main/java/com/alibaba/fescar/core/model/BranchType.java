@@ -16,6 +16,9 @@
 
 package com.alibaba.fescar.core.model;
 
+/**
+ * 分支类型: AT/MT
+ */
 public enum BranchType {
 
     // AT Branch

@@ -41,6 +41,11 @@ public class XID {
         return ipAddress + ":" + port + ":" + tranId;
     }
 
+    /**
+     * "*:transactionId"
+     * @param xid
+     * @return
+     */
     public static long getTransactionId(String xid) {
         if (xid == null) {
             return -1;
@@ -50,6 +55,11 @@ public class XID {
         return Long.parseLong(xid.substring(idx + 1));
     }
 
+    /**
+     * "serverAddress:*"
+     * @param xid
+     * @return
+     */
     public static String getServerAddress(String xid) {
         if (xid == null) {
             return null;

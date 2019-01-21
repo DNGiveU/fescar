@@ -18,5 +18,11 @@ package com.alibaba.fescar.rm.datasource.exec;
 
 public interface Executor<T> {
 
+    /**
+     * 具体执行，保存前记录点、成功删除记录点、失败回滚记录点
+     * @param args
+     * @return
+     * @throws Throwable
+     */
     T execute(Object... args) throws Throwable;
 }
